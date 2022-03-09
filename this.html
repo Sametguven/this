@@ -1,0 +1,84 @@
+<html>
+<body>
+<button onclick="this.style.backgroundColor='red'">Tıkla</button>
+<script>
+
+var kullanici = {
+    ad: "Ahmet",
+    soyad: "Kilinc",
+    adsoyad: function () {
+        console.log(this.ad + " " + this.soyad);
+
+        //this kullanmadan ise şu şekilde çağırıyoruz:
+		//console.log(kullanici.ad + " " + kullanici.soyad);   
+    }	
+}
+console.log(kullanici.ad + " " + kullanici.soyad);
+//----------------------------------------------------------
+var kullanici = {
+	ad: "Ahmet",
+	soyad: "Kilinc",
+	adsoyad: function(){
+		console.log(this.ad + " " + this.soyad);
+	}
+};
+
+kullanici.adsoyad();
+//----------------------------------------------------------
+<!-- var ogrenci = "zeynep"; -->
+
+<!-- function goster(){ -->
+	<!-- var ogrenci = "emre"; -->
+	<!-- document.write(ogrenci); -->
+<!-- } -->
+
+<!-- goster(); -->
+//----------------------------------------------------------
+var ogrenci = "zeynep";
+
+function goster(){
+	var ogrenci = "emre";
+	document.write(this.ogrenci);
+}
+
+goster();
+
+//-----------------------------------------------------------
+var kisi = {
+	adi: "Ali",
+	soyadi: "Veli",
+	adi_soyadi: function(){
+		return this.adi + " " + this.soyadi;
+	}
+};
+
+console.log(kisi.adi_soyadi());
+//-----------------------------------------------------------
+var x = this;
+console.log(x);
+//--------------------------------------------------------------
+console.log(window);
+//--------------------------------------------------------------
+
+var ad = "Ahmet";
+var soyad = "Kılıç";
+
+function adsoyad(){
+	console.log(this.ad + " " + this.soyad);
+}
+
+var kullanici = {
+	ad: "Büşra",
+	soyad: "Şeker",
+	adsoyad: function(){
+		console.log(this.ad + " " + this.soyad);
+	}
+};
+
+adsoyad();
+window.adsoyad();
+
+kullanici.adsoyad();
+</script>
+</body>
+</html>
